@@ -66,9 +66,9 @@ public class Item {
 			 return "Error while connecting to the database for reading.";
 		 }
 		// Prepare the html table to be displayed
-		 output = "<table border='1'>"
-		 + "<tr><th>Item Code</th><th>Item Name</th><th>Item Price</th>"
-		 + "<th>Item Description</th><th>Update</th><th>Remove</th></tr>";
+		 output = "<table  class='table table-striped'>"
+		 + "<tr><th scope='col'>Item Code</th><th scope='col'>Item Name</th><th scope='col'>Item Price</th>"
+		 + "<th scope='col'>Item Description</th><th scope='col'>Update</th><th scope='col'>Remove</th></tr>";
 		 String query = "select * from items";
 		 Statement stmt = con.createStatement();
 		 ResultSet rs = stmt.executeQuery(query);
@@ -81,10 +81,10 @@ public class Item {
 			String itemPrice = Double.toString(rs.getDouble("itemPrice"));
 			String itemDesc = rs.getString("itemDesc");
 			// Add a row into the html table
-			output += "<tr><td>" + itemCode + "</td>";
-			output += "<td>" + itemName + "</td>";
-			output += "<td>" + itemPrice + "</td>";
-			output += "<td>" + itemDesc + "</td>";
+			output += "<tr><td scope='row'>" + itemCode + "</td>";
+			output += "<td >" + itemName + "</td>";
+			output += "<td >" + itemPrice + "</td>";
+			output += "<td >" + itemDesc + "</td>";
 			// buttons
 			output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-primary'></td>"
 			 + "<td><form method='post' action='Items.jsp'>"

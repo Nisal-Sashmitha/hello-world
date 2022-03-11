@@ -46,16 +46,18 @@
  			<div class="col">
  				<h1>Item Management</h1>
 				<form method="post" action="Items.jsp">
-					Item code: <input name='itemCode' type="text"><br> Item
-					name: <input name='itemName' type="text"><br> Item price:<input
-						name='itemPrice' type="text"><br> Item description: <input
-						name="itemDesc" type="text"><br> <input name="btnSubmit"
-						type="submit" value="save">
+					Item code: <input name='itemCode' type="text" class="form-control m-2"><br> Item
+					name: <input name='itemName' type="text" class="form-control m-2"><br> Item price:<input
+						name='itemPrice' type="text" class="form-control m-2"><br> Item description: <input
+						name="itemDesc" type="text" class="form-control m-2"><br> <input name="btnSubmit"
+						type="submit" value="save" class='btn btn-success form-control m-2'>
 			
 				</form>
 				<br>
+				<div class="alert alert-success d-inline-flex">
+ 					<% out.print(session.getAttribute("statusMsg"));%>
+				</div>
 				
-				<h3><% out.print(session.getAttribute("statusMsg")); %></h3>
 				<br>
 				<%
 				 Item itemObj = new Item();
